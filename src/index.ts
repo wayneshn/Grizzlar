@@ -2,6 +2,7 @@ import express from 'express'
 import Bearer from '@bearer/node-agent'
 import telemetry from './lib/telemetry'
 import * as routes from './routes'
+import serverless from 'serverless-http'
 
 export const BUID = 'bearerUid' // TODO - What is this for?
 export const PORT = process.env.PORT || 8080
@@ -103,17 +104,20 @@ app.use((err, _req, res, _next) => {
  * Starting up the server
  */
 
-app.listen(PORT, async () => {
-  // Log start up
-  console.log('Pizzly listening on port', PORT)
-  if (PORT === 8080) {
-    console.log('http://localhost:8080')
-  }
+if (process.env.ENVIRONMENT === 'lambda') {
+  module.exports.handler = serverless(app)
+} else {
+  app.listen(PORT, async () => {
+    // Log start up
+    console.log('Pizzly listening on port', PORT)
+    if (PORT === 8080) {
+      console.log('http://localhost:8080')
+    }
 
-  // Initialize Telemetry (if enabled)
-  process.env.UUID = telemetry()
-})
-
+    // Initialize Telemetry (if enabled)
+    process.env.UUID = telemetry()
+  })
+}
 /**
  * Optional. Initialize the Bearer agent if the environment key is provided.
  * Bearer will monitor and shield the Pizzly instance from APIs failure.

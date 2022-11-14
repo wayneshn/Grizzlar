@@ -46,6 +46,7 @@
     "passport": "^0.4.0",
     "passport-oauth1": "^1.1.0",
     "pg": "^8.0.3",
+    "serverless-http": "^3.1.0",
     "simple-oauth2": "^3.0.0",
     "uuid": "^7.0.3"
   },
@@ -78,7 +79,7 @@
     "jest-localstorage-mock": "^2.2.0",
     "lint-staged": "^8.1.0",
     "nock": "^10.0.1",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.3.0",
     "nodemon": "^2.0.2",
     "prettier": "^1.15.3",
     "rimraf": "^3.0.2",

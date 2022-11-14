@@ -1,0 +1,20 @@
+{
+    "name": "Slack",
+    "auth": {
+        "authorizationURL": "https://slack.com/oauth/authorize",
+        "tokenURL": "https://slack.com/api/oauth.access",
+        "authType": "OAUTH2",
+        "authorizationParams": { "access_type": "offline", "consent": true },
+        "auth": {
+            "accessType": "offline"
+        }
+    },
+    "request": {
+        "baseURL": "https://slack.com/api/",
+        "headers": {
+            "Accept": "application/json",
+            "Authorization": "Bearer ${auth.accessToken}",
+            "User-Agent": "Pizzly"
+        }
+    }
+}

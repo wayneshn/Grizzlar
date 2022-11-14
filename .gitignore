@@ -9,5 +9,4 @@ jspm_packages
 .cache/
 coverage/
 .DS_Store
-dist/
 yarn-error.log

@@ -1,0 +1,34 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.authRouter = void 0;
+const express_1 = require("express");
+const context_1 = require("./context");
+const config_1 = require("./config");
+const session_1 = require("./session");
+const strategy_1 = require("./strategy");
+const error_handler_1 = require("./error-handler");
+const success_1 = require("./success");
+const auth_id_1 = require("./auth-id");
+const revoke_1 = require("./revoke");
+const setup_id_1 = require("./setup-id");
+const compose_middleware_1 = require("compose-middleware");
+const configure_request_1 = require("../configure-request");
+const auth_details_1 = require("../auth-details");
+const set_identifiers_1 = require("../../middlewares/set-identifiers");
+const router_1 = require("../../functions/router");
+exports.default = () => {
+    const authenticateAndRespond = compose_middleware_1.compose(strategy_1.authenticate, session_1.destroySession, success_1.authSuccess);
+    const router = express_1.Router();
+    router.use(session_1.session());
+    router.get('/callback', context_1.callbackContext, config_1.callbackConfig, auth_id_1.callbackAuthId, authenticateAndRespond);
+    router.get('/:buid', set_identifiers_1.connectBuid, context_1.connectContext, router_1.setupId, setup_id_1.connectSetupId, config_1.connectConfig, auth_id_1.connectAuthId, authenticateAndRespond);
+    router.delete('/:buid/revoke/:authId', revoke_1.revoke);
+    router.use(session_1.destroySessionOnError);
+    router.use(error_handler_1.errorHandler);
+    return router;
+};
+exports.authRouter = () => {
+    const router = express_1.Router();
+    router.get('/:buid/auth/:authId', configure_request_1.configureAuthDetailsRequest, router_1.setupId, strategy_1.fetchAuthDetails, auth_details_1.authDetailsResponse);
+    return router;
+};

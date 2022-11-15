@@ -24,6 +24,7 @@ const request_config_1 = require("../../legacy/api-config/request-config");
 exports.incomingRequestHandler = async (req, res, next) => {
     // General inputs validation
     const authId = req.get('Pizzly-Auth-Id') || '';
+    const chimpDC = req.get('Chimp-Dc') || '';
     const integrationName = req.params.integration;
     if (!authId) {
         return next(new error_handling_1.PizzlyError('missing_auth_id'));
@@ -49,13 +50,16 @@ exports.incomingRequestHandler = async (req, res, next) => {
         // i.e. replace ${auth.accessToken} from the integration template
         // with the authentication access token retrieved from the database.
         const forwardedHeaders = headersToForward(req.rawHeaders);
-        const { url, headers } = await buildRequest({
+        let { url, headers } = await buildRequest({
             authentication,
             integration,
             method: req.method,
             forwardedHeaders: forwardedHeaders,
             path: req.originalUrl.substring(('/proxy/' + integrationName).length + 1)
         });
+        if (chimpDC) {
+            url = new url_1.URL(url.toString().replace('server', chimpDC));
+        }
         // Remove pizzly related params: ex
         url.searchParams.forEach((value, key) => {
             if (key.startsWith('pizzly_')) {

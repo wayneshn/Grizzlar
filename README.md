@@ -1,11 +1,21 @@
+# Grizzlar, a fork of Bearer/Pizzly
 
-# :warning: This project is no longer maintained :warning:
-Thanks for all of your time and support. This project is now publically archived. We encourage you to fork the repo and make it your own.
+This project is a fork of [Bearer/Pizzly](https://github.com/Bearer/Pizzly) - which is no longer maintained by the original author.
+
+## New features added in Grizzlar
+
+1. Added support for AWS Lambda, just set the environment variable to lambda in your Lambda configuration
+2. Added support for AWS Elastic Beanstalk.
+
+## Bug fixes
+
+1. Upgraded the Slack integration to support the latest API v2.
+2. Allowing the MailChimp proxy to specify MailChimp data center. When making an API call to the MailChimp proxy, add a "Chimp-Dc" header in the request, with the value being the MailChimp data center name(us1, us2, etc.).
 
 ---
 
-<a href="https://heroku.com/deploy?template=https://github.com/Bearer/Pizzly" rel="nofollow"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" height="26"></a>
-<a href="https://console.platform.sh/projects/create-project/?template=https://github.com/Bearer/Pizzly&utm_campaign=deploy_on_platform?utm_medium=button&utm_source=affiliate_links&utm_content=https://github.com/Bearer/Pizzly" rel="nofollow"><img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy with Platform.sh" height="26"></a>
+<a href="https://heroku.com/deploy?template=https://github.com/ringoinca/grizzlar" rel="nofollow"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" height="26"></a>
+<a href="https://console.platform.sh/projects/create-project/?template=https://github.com/ringoinca/grizzlar&utm_campaign=deploy_on_platform?utm_medium=button&utm_source=affiliate_links&utm_content=https://github.com/ringoinca/grizzlar" rel="nofollow"><img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy with Platform.sh" height="26"></a>
 <a href="https://www.bearer.com/?ref=pizzly"><img src="/views/assets/img/badges/bearer-badge.png?raw=true" alt="The #1 data security as code platform" height="26"></a>
 
 # Pizzly 🐻 - The OAuth Integration Proxy
@@ -76,7 +86,7 @@ Pizzly can be installed anywhere (AWS, Heroku, Platform.sh, etc.). Here's a quic
    myAPI
      .auth('xxx-auth-id') // Replace with the authId previously obtained
      .get('/xxx-endpoint') // Replace with a valid endpoint of the API
-     .then((response) => console.log(response))
+     .then(response => console.log(response))
      .catch(console.error)
    ```
 
@@ -97,7 +107,7 @@ const github = pizzly.integration('github')
 github
   .connect() // Connect to GitHub
   .then(({ authId }) => console.log('Sucessfully connected! with the authId:', authId))
-  .catch((error) => console.error('It failed!', error))
+  .catch(error => console.error('It failed!', error))
 ```
 
 This example will trigger an OAuth dance to the GitHub API.
@@ -149,7 +159,7 @@ And adding new APIs is straightforward. Just create a new configuration file wit
 Pizzly originally started at Bearer as a way to simplify the developer's journey and ease the building of API integrations. OAuth is a great framework, but the difficulty and wide range of implementation makes it painful to use and tends to slow down the ability to integrate with new APIs.
 
 _But seriously, why Pizzly? We're fan of bears and fell in love with this [sweet hybrid](https://en.wikipedia.org/wiki/Grizzly–polar_bear_hybrid) one 🐻_
- 
+
 ## Contributing
 
 While Pizzly is actively backed by Bearer's engineering team, the main purpose of this repository is to continue to improve Pizzly, making it larger and easier to use. We are grateful to each contributors and encourage you to participate by reporting bugs, ask for improvements and propose changes to the code.

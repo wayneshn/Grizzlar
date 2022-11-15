@@ -14,24 +14,28 @@ This project is a fork of [Bearer/Pizzly](https://github.com/Bearer/Pizzly) - wh
 
 ---
 
-<a href="https://heroku.com/deploy?template=https://github.com/ringoinca/grizzlar" rel="nofollow"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" height="26"></a>
-<a href="https://console.platform.sh/projects/create-project/?template=https://github.com/ringoinca/grizzlar&utm_campaign=deploy_on_platform?utm_medium=button&utm_source=affiliate_links&utm_content=https://github.com/ringoinca/grizzlar" rel="nofollow"><img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy with Platform.sh" height="26"></a>
+<a href="https://heroku.com/deploy?template=https://github.com/wayneshn/grizzlar" rel="nofollow"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" height="26"></a>
+<a href="https://console.platform.sh/projects/create-project/?template=https://github.com/wayneshn/grizzlar&utm_campaign=deploy_on_platform?utm_medium=button&utm_source=affiliate_links&utm_content=https://github.com/wayneshn/grizzlar" rel="nofollow"><img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy with Platform.sh" height="26"></a>
 <a href="https://www.bearer.com/?ref=pizzly"><img src="/views/assets/img/badges/bearer-badge.png?raw=true" alt="The #1 data security as code platform" height="26"></a>
 
-# Pizzly 🐻 - The OAuth Integration Proxy
+# Grizzlar 🐻 - An OAuth Integration Proxy
 
 <div align="center">
 
-<img src="/views/assets/img/logos/pizzly.png?raw=true" width="300">
+<img src="/views/assets/img/logos/grizzlar.jpg" width="300">
 
 [How it works?](#how-it-works) - [Getting started](#getting-started) - [Documentation](#documentation)  
 [Examples](#examples) - [Supported APIs](#supported-apis) - [Contributing](#contributing)
 
 </div>
 
-**Pizzly makes it fast and reliable to build API integrations**. It handles dozens of pre-configured APIs (including Salesforce, Slack, Google Sheets [and many more](#supported-apis)) and lets you quickly add more APIs with a generic JSON configuration schema.
+**Grizzlar makes it fast and reliable to build API integrations**. It allows you to integrate your app with any third-party platforms that use OAuth2. Think of something like Zapier, allowing users to connect their third-party accounts to your app and enabling your app to perform actions on behalf of the user.
 
-Using Pizzly your engineering team can focus on consuming APIs, in a standardized way that will grow as you grow.
+Currently, the project allows you to integrate with dozens of services like Slack, Google Sheets, Hubspot, Linkedin, and Twitter. But it is very easy for you to add your own integration -- as simple as a JSON configuration file.
+
+# Orignal Pizzly Readme file.
+
+The following is the original Pizzly Readme file. It allows you to get started quickly with Grizzlar as we prepare for our own version.
 
 ## How it works?
 

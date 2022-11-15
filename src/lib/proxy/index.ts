@@ -23,6 +23,7 @@ import { getOAuth1Credentials } from '../../legacy/api-config/request-config'
 export const incomingRequestHandler = async (req, res, next) => {
   // General inputs validation
   const authId = req.get('Pizzly-Auth-Id') || ''
+  const chimpDC = req.get('Chimp-Dc') || ''
   const integrationName = req.params.integration
 
   if (!authId) {
@@ -55,13 +56,16 @@ export const incomingRequestHandler = async (req, res, next) => {
     // i.e. replace ${auth.accessToken} from the integration template
     // with the authentication access token retrieved from the database.
     const forwardedHeaders = headersToForward(req.rawHeaders)
-    const { url, headers } = await buildRequest({
+    let { url, headers } = await buildRequest({
       authentication,
       integration,
       method: req.method,
       forwardedHeaders: forwardedHeaders,
       path: req.originalUrl.substring(('/proxy/' + integrationName).length + 1)
     })
+    if (chimpDC) {
+      url = new URL(url.toString().replace('server', chimpDC))
+    }
 
     // Remove pizzly related params: ex
     url.searchParams.forEach((value, key) => {

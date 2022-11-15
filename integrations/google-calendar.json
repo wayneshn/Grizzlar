@@ -1,6 +1,6 @@
 {
   "name": "Google Calendar",
-  "image": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Google_Calendar.png",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg",
   "auth": {
     "authorizationURL": "https://accounts.google.com/o/oauth2/v2/auth",
     "tokenURL": "https://www.googleapis.com/oauth2/v4/token",

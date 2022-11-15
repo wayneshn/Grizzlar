@@ -7,6 +7,8 @@ import serverless from 'serverless-http'
 export const BUID = 'bearerUid' // TODO - What is this for?
 export const PORT = process.env.PORT || 8080
 
+console.log(process.env.PORT)
+
 const app = express()
 
 app.set('view engine', 'ejs')

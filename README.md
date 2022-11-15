@@ -33,7 +33,7 @@ This project is a fork of [Bearer/Pizzly](https://github.com/Bearer/Pizzly) - wh
 
 Currently, the project allows you to integrate with dozens of services like Slack, Google Sheets, Hubspot, Linkedin, and Twitter. But it is very easy for you to add your own integration -- as simple as a JSON configuration file.
 
-# Orignal Pizzly Readme file.
+# Orignal Pizzly Readme file
 
 The following is the original Pizzly Readme file. It allows you to get started quickly with Grizzlar as we prepare for our own version.
 

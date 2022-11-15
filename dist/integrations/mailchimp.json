@@ -10,7 +10,7 @@
         }
     },
     "request": {
-        "baseURL": "https://server.api.mailchimp.com/3.0/",
+        "baseURL": "https://server-datacenter.api.mailchimp.com/3.0/",
         "headers": {
             "Accept": "application/json",
             "User-Agent": "Pizzly",

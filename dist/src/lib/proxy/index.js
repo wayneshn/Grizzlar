@@ -58,7 +58,7 @@ exports.incomingRequestHandler = async (req, res, next) => {
             path: req.originalUrl.substring(('/proxy/' + integrationName).length + 1)
         });
         if (chimpDC) {
-            url = new url_1.URL(url.toString().replace('server', chimpDC));
+            url = new url_1.URL(url.toString().replace('server-datacenter', chimpDC));
         }
         // Remove pizzly related params: ex
         url.searchParams.forEach((value, key) => {

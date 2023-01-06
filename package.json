@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "",
   "author": "engineering@bearer.sh",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/src/index.js",
   "types": "src/types.d.ts",
   "scripts": {

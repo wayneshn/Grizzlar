@@ -1,0 +1,22 @@
+{
+  "name": "Notion",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/1920px-Notion-logo.svg.png",
+  "auth": {
+    "authorizationURL": "https://api.notion.com/v1/oauth/authorize",
+    "tokenURL": "https://api.notion.com/v1/oauth/token",
+    "authType": "OAUTH2",
+    "tokenParams": { "code": "access_token" },
+    "authorizationParams": { "response_type": "code", "owner": "user" },
+    "auth": {
+      "accessType": "offline"
+    }
+  },
+  "request": {
+    "baseURL": "https://api.online.net/api/v1/",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "Bearer ${auth.accessToken}",
+      "User-Agent": "Pizzly"
+    }
+  }
+}

@@ -5,6 +5,8 @@ jspm_packages
 .env
 
 .envrc
+app.yaml
+env_variables.yaml
 
 dist/
 .cache/

@@ -1,0 +1,17 @@
+# The configuration for deploying to Google Cloud App Engine
+runtime: nodejs16
+env: standard
+
+#Environment variables
+env_variables:
+  AUTH_CALLBACK_URL:
+  COOKIE_SECRET:
+  DASHBOARD_PASSWORD:
+  DASHBOARD_USERNAME:
+  DB_USER:
+  DB_PASSWORD:
+  DB_HOST:
+  DB_PORT: 5432
+  DB_DATABASE:
+  PUBLISHABLE_KEY:
+  SECRET_KEY:

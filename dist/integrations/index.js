@@ -91,3 +91,4 @@ require("./zoho-subscriptions.json");
 require("./zoom.json");
 require("./splitwise.json");
 require("./youneedabudget.json");
+require("./notion.json");

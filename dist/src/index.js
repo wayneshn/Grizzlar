@@ -30,7 +30,6 @@ const routes = __importStar(require("./routes"));
 const serverless_http_1 = __importDefault(require("serverless-http"));
 exports.BUID = 'bearerUid'; // TODO - What is this for?
 exports.PORT = process.env.PORT || 8080;
-console.log(process.env.PORT);
 const app = express_1.default();
 app.set('view engine', 'ejs');
 app.set('views', './views');

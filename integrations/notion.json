@@ -5,14 +5,10 @@
     "authorizationURL": "https://api.notion.com/v1/oauth/authorize",
     "tokenURL": "https://api.notion.com/v1/oauth/token",
     "authType": "OAUTH2",
-    "tokenParams": { "code": "access_token" },
-    "authorizationParams": { "response_type": "code", "owner": "user" },
-    "auth": {
-      "accessType": "offline"
-    }
+    "authorizationParams": { "response_type": "code", "owner": "user" }
   },
   "request": {
-    "baseURL": "https://api.online.net/api/v1/",
+    "baseURL": "https://api.notion.com/v1/",
     "headers": {
       "Accept": "application/json",
       "Authorization": "Bearer ${auth.accessToken}",

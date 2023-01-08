@@ -8,7 +8,7 @@ jspm_packages
 app.yaml
 env_variables.yaml
 
-dist/
+# dist/
 .cache/
 coverage/
 .DS_Store
